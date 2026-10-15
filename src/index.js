@@ -1,4 +1,3 @@
-<CodeBlock language="javascript" editable>
 import express from "express";
 import { fileURLToPath } from "node:url";
 import { q } from "./db.js";
@@ -307,4 +306,4 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
 console.log(Vendedor 24h no ar na porta $DIL0);
 });
-</CodeBlock>
+
