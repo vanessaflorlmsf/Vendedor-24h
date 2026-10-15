@@ -1,0 +1,13 @@
+{
+  "name": "vendedor24h-backend",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node src/index.js", "dev": "node --watch --env-file=.env src/index.js" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  }
+}
