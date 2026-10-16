@@ -15,6 +15,11 @@ app.get("/privacy", (_req, res) => {
   res.sendFile(privacyPath);
 });
 
+// --- Página inicial (evita "Cannot GET /") ---
+app.get("/", (_req, res) => {
+  res.json({ name: "Vendedor 24h", status: "online" });
+});
+
 // --- Middleware (guarda o corpo bruto para validar a assinatura) ---
 app.use(
   express.json({
