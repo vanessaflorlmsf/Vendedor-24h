@@ -6,6 +6,7 @@ import { runAgent } from "./agent.js";
 import { getPayment, verifyMercadoPagoSignature } from "./payments.js";
 import { confirmPaid } from "./orders.js";
 import { adminRouter } from "./admin.js";
+import { migrate } from "./migrate.js";
 
 const app = express();
 
@@ -318,6 +319,12 @@ app.use((err, _req, res, _next) => {
 });
 
 // --- Inicialização do servidor ---
+try {
+  await migrate();
+} catch (error) {
+  console.error("Falha ao preparar o banco:", error);
+}
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Vendedor 24h no ar na porta ${port}`);
